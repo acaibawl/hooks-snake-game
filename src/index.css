@@ -7,7 +7,37 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+  .App {
+    max-width: calc(9px * 35 + 1px * 2); /* a. (マスの幅) * 個数 + (ボーダーの幅) * 本数 */
+    text-align: center;
+  }
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.dots {
+  height: 9px;
+  width: 9px;
+  background: #0f1d1d;
+}
+
+.field {
+  display: flex;
+  flex-wrap: wrap; /* b. */
+}
+
+.snake {
+  background: white;
+}
+
+.food {
+  background: pink;
 }
