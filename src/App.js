@@ -4,48 +4,21 @@ import Field from './components/Field';
 import Button from './components/Button';
 import ManipulationPanel from './components/ManipulationPanel';
 import { initFields, getFoodPosition } from './utils';
+import {
+  defaultInterval,
+  defaultDifficulty,
+  Delta,
+  Difficulty,
+  Direction,
+  DirectionKeyCodeMap,
+  GameStatus,
+  OppositeDirection,
+  initialPosition,
+  initialValues
+} from './constants'
 
-const initialPosition = {x: 17, y: 17};
-const initialValues = initFields(35, initialPosition);
-const defaultInterval = 100;
-const defaultDifficulty = 3;
-const Difficulty = [1000, 500, 100, 50, 10];
 
 
-const GameStatus = Object.freeze({
-  init: 'init',
-  playing: 'playing',
-  suspended: 'suspended',
-  gameovr: 'gameover'
-});
-
-const Directin = Object.freeze({
-  up: 'up',
-  right: 'right',
-  left: 'left',
-  down: 'down'
-});
-
-const DirectionKeyCodeMap = Object.freeze({
-  37: Directin.left,
-  38: Directin.up,
-  39: Directin.right,
-  40: Directin.down
-});
-
-const OppositeDirection = Object.freeze({
-  up: 'down',
-  right: 'left',
-  left: 'right',
-  down: 'up'
-});
-
-const Delta = Object.freeze({
-  up: {x: 0, y: -1},
-  right: {x: 1, y: 0},
-  left: {x: -1, y: 0},
-  down: {x: 0, y: 1}
-});
 
 let timer = undefined;
 
@@ -74,7 +47,7 @@ function App() {
   const [fields, setFields] = useState(initialValues);
   const [body, setBody] = useState([]);
   const [status, setStatus] = useState(GameStatus.init);
-  const [direction, setDirection] = useState(Directin.up);
+  const [direction, setDirection] = useState(Direction.up);
   const [difficulty, setDifficulty] = useState(defaultDifficulty);
   const [tick, setTick] = useState(0);
 
@@ -104,7 +77,7 @@ function App() {
     }, defaultInterval);
     setStatus(GameStatus.init);
     setBody([initialPosition]);
-    setDirection(Directin.up);
+    setDirection(Direction.up);
     setFields(initFields(35, initialPosition));
   }
 
