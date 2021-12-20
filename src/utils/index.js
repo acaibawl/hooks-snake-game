@@ -1,4 +1,4 @@
-const getFoodPosition = (fieldSize, excludes) => {
+export const getFoodPosition = (fieldSize, excludes) => {
   while(true){
     const x = Math.floor(Math.random() * (fieldSize - 1 - 1)) + 1;
     const y = Math.floor(Math.random() * (fieldSize - 1 - 1)) + 1;
