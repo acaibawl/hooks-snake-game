@@ -1,3 +1,15 @@
+const getFoodPosition = (fieldSize, excludes) => {
+  while(true){
+    const x = Math.floor(Math.random() * (fieldSize - 1 - 1)) + 1;
+    const y = Math.floor(Math.random() * (fieldSize - 1 - 1)) + 1;
+    const conflict = excludes.some(item => item.x === x && item.y === y);
+
+    if(!conflict) {
+      return {x, y};
+    }
+  }
+}
+
 export const initFields = (fieldSize, snakePosition) => {
   const fields = [];
   for (let i = 0; i < fieldSize; i++) {
@@ -6,6 +18,9 @@ export const initFields = (fieldSize, snakePosition) => {
   }
 
   fields[snakePosition.x][snakePosition.y] = 'snake';
+
+  const food = getFoodPosition(fieldSize, [snakePosition]);
+  fields[food.y][food.x] = 'food';
 
   return fields;
 }
