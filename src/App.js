@@ -14,33 +14,16 @@ import {
   GameStatus,
   OppositeDirection,
   initialPosition,
-  initialValues
+  initialValues,
+  isCollision,
+  isEatingMyself
 } from './constants'
-
-
-
 
 let timer = undefined;
 
 const unsubscribe = () => {
   if(!timer) { return; }
   clearInterval(timer);
-}
-
-const isCollision = (fieldSize, position) => {
-  if(position.y < 0 || position.x < 0){
-    return true;
-  }
-
-  if(position.y > fieldSize - 1 || position.x > fieldSize - 1){
-    return true;
-  }
-
-  return false;
-}
-
-const isEatingMyself = (fields, position) => {
-  return fields[position.y][position.x] === 'snake';
 }
 
 function App() {
