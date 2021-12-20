@@ -1,4 +1,11 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faArrowLeft,
+  faArrowUp,
+  faArrowDown,
+  faArrowRight
+} from '@fortawesome/free-solid-svg-icons'
 
 const ManipulationPanel = ({ onChange }) => {
   const onUp = () => onChange('up')
@@ -7,11 +14,13 @@ const ManipulationPanel = ({ onChange }) => {
   const onDown = () => onChange('down')
 
   return (
-    <div className='maipulation-panel'>
-        <button onClick={onLeft}>←</button>
-        <button onClick={onUp}>↑</button>
-        <button onClick={onDown}>↓</button>
-        <button onClick={onRight}>→</button>
+    <div className='manipulation-panel'>
+        <button className='manipulation-btn btn btn-left' onClick={onLeft}><FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon></button>
+        <div>
+          <button className='manipulation-btn btn btn-up' onClick={onUp}><FontAwesomeIcon icon={faArrowUp}></FontAwesomeIcon></button>
+          <button className='manipulation-btn btn btn-down' onClick={onDown}><FontAwesomeIcon icon={faArrowDown}></FontAwesomeIcon></button>
+        </div>
+        <button className='manipulation-btn btn btn-right' onClick={onRight}><FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></button>
     </div>
   );
 }

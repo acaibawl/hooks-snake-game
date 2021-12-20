@@ -174,9 +174,6 @@ function App() {
       <main className='main'>
         <Field fields={fields} />
       </main>
-      <div style={{ padding: '16px' }}>
-        <button onClick={handleMoving} >進む</button>
-      </div>
       <footer className='footer'>
         <Button status={status} onStop={onStop} onStart={onStart} onRestart={onRestart} />
         <ManipulationPanel onChange={onChangeDirection} />

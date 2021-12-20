@@ -33,6 +33,18 @@ body {
   background: #0f1d1d;
 }
 
+.title-container {
+  border-radius: 4px 4px 0px 0px;
+  box-shadow: 0px 4px 1px 1px #97A5A5, 0px 6px 1px 1px #3C4A4A, 0px 0px 1px 1px #3C4A4A;
+}
+
+.title {
+  margin: 0;
+  padding: 8px;
+  font-size: 1.1rem;
+}
+
+
 .field {
   display: flex;
   flex-wrap: wrap; /* b. */
@@ -125,4 +137,92 @@ body {
 .difficulty-down:active {
   transform: scale(.8s);
   opacity: .8;
+}
+
+.btn {
+  border: 0;
+  cursor: pointer;
+  color: white;
+  border-radius: 4px;
+  width: 100%;
+  font-weight: bold;
+  padding: 8px 16px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: all ease .2s;
+}
+
+.btn-init,
+.btn-suspended {
+  box-shadow: 0px 4px 1px 1px #199A4B, 0px 6px 1px 1px #0B5420;
+  background: #23CE6B;
+}
+
+.btn-playing {
+  box-shadow: 0px 4px 1px 1px #D4A752, 0px 6px 1px 1px #956933;
+  background: #FFD166;
+}
+
+.btn-gameover {
+  box-shadow: 0px 4px 1px 1px #CE3959, 0px 6px 1px 1px #8B1C2C;
+  background: #EF476F;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+ .btn:active {
+   box-shadow: 0px 0px 0px 0px;
+   transform: translateY(6px);
+ }
+ 
+ .btn-init:active,
+ .btn-suspended:active {
+   background: #20BD60;
+ }
+ 
+ .btn-playing:active {
+   background: #EABC5C;
+ }
+ 
+ .btn-gameover:active {
+   background: #DE4064;
+ }
+
+ .manipulation-panel {
+  margin-top: 2px;
+  display: flex;
+  justify-content: center;
+}
+
+.manipulation-btn {
+  min-width: 106px;
+  margin: 4px 2px;
+  background: #52B4E8;
+  box-shadow: 0px 4px 1px 1px #4293C4, 0px 6px 1px 1px #21507B;
+}
+
+.btn-move:active {
+  background: #4293C4;
+}
+
+.btn-left,
+.btn-right
+{
+  min-width: 106px;
+  width: 106px;
+}
+.btn-left {
+  margin-left: 0;
+}
+.btn-right {
+  margin-right: 0;
+}
+
+.btn-up,
+.btn-down
+{
+  margin-left: 0px;
+  margin-right: 0px;
 }
